@@ -1,0 +1,55 @@
+﻿<fieldset>
+    <legend>Currency Conversion</legend>
+
+    @using (@Html.BeginForm(null, null, FormMethod.Post, new { id = "currency_conversion" }))
+    {
+
+    <div class="row collapse">
+        <div class="small-3 columns">
+            <span class="prefix">From</span>
+        </div>
+        <div class="small-9 columns">
+            <select id="currency_from">
+                @foreach (var currency in ViewBag.CurrencyList)
+                {
+                    <option value="@currency">@currency</option>
+                    }
+            </select>
+        </div>
+    </div>
+
+    <div class="row collapse">
+        <div class="small-3 columns">
+            <span class="prefix">To</span>
+        </div>
+        <div class="small-9 columns">
+            <select id="currency_to">
+                @foreach (var currency in ViewBag.CurrencyList)
+                {
+                    <option value="@currency">@currency</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <div class="row collapse">
+        <div class="small-3 columns">
+            <span class="prefix">Amount</span>
+        </div>
+        <div class="small-9 columns">
+           <input id="currency_amount" type="number" required min="1" />
+        </div>
+    </div>
+
+    <ul class="pricing-table">
+        <li class="price" id="currency_result">0</li>
+    </ul>
+
+    <div class="alert-box alert hide" id="currency_error">
+        Unknown error while communicating with the server.
+    </div>
+
+    <input type="submit" class="button expand" value="Convert">
+
+    }
+</fieldset>

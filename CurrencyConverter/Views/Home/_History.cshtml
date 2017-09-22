@@ -1,0 +1,27 @@
+﻿<fieldset>
+    <legend>Currency history</legend>
+
+    <div class="row collapse">
+        <div class="small-3 columns">
+            <span class="prefix">Currency</span>
+        </div>
+        <div class="small-9 columns">
+            <select id="history_currency">
+                <option disabled selected>Select a currency</option>
+                @foreach (var currency in ViewBag.CurrencyList)
+                {
+                    <option value="@currency">@currency</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <p class="text-center">Euro foreign exchange reference rates</p>
+
+    <div id="history_graph" class="hide"></div>
+
+    <div class="alert-box alert hide" id="history_error">
+        Unknown error while communicating with the server.
+    </div>
+   
+</fieldset>

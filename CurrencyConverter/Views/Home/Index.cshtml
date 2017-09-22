@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Currency Converter";
+}
+
+<div class="row">
+    <div class="small-12 columns">
+        <h1 class="text-center">@ViewBag.Title</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="small-12 medium-6 columns">
+        @Html.Partial("_Converter")
+    </div>
+    <div class="small-12 medium-6 columns">
+        @Html.Partial("_History")
+    </div>
+</div>
+
+<div class="row">
+    <div class="small-12 columns">
+        <hr />
+        <p class="text-center">
+            &copy; @DateTime.Now.Year
+            <a href="http://somaerdelyi.net" target="_blank">Soma Erdélyi</a>
+        </p>
+    </div>
+</div>
