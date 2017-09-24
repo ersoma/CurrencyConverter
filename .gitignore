@@ -76,4 +76,5 @@ _[Ss]cripts
 # Custom #
 ######################
 .vs/
+prtscr/
 *.pdf
