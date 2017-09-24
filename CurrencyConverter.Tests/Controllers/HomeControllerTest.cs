@@ -7,6 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CurrencyConverter;
 using CurrencyConverter.Controllers;
 using CurrencyConverter.Tests.Fakes;
+using System.Web.Http;
 
 namespace CurrencyConverter.Tests.Controllers
 {
@@ -31,9 +32,33 @@ namespace CurrencyConverter.Tests.Controllers
 
             // Assert
             Assert.IsNotNull(viewtContent);
-            Assert.AreEqual(viewCurrencyList.Count, fakeCurrencyList.Count);
-            Assert.AreEqual(viewCurrencyList.ToList()[0], fakeCurrencyList[0]);
-            Assert.AreEqual(viewCurrencyList.ToList()[1], fakeCurrencyList[1]);
+            Assert.AreEqual(fakeCurrencyList.Count, viewCurrencyList.Count);
+            Assert.AreEqual(fakeCurrencyList[0], viewCurrencyList.ToList()[0]);
+            Assert.AreEqual(fakeCurrencyList[1], viewCurrencyList.ToList()[1]);
+        }
+
+        [TestMethod]
+        public void Index_Exception()
+        {
+            // Arrange
+            var fakeExceptionText = "TEST";
+            var fakeRepository = new FakeCurrencyRespository_Exception();
+            fakeRepository.ExceptionText = fakeExceptionText;
+            HomeController controller = new HomeController(fakeRepository);
+
+            try
+            {
+                // Act
+                var resultTask = controller.Index();
+                resultTask.Wait();
+                throw new Exception("No exception is thrown by controller.");
+            }
+            catch (AggregateException ex)
+            {
+                // Assert
+                Assert.AreEqual(typeof(Exception), ex.InnerException.GetType());
+                Assert.AreEqual(fakeExceptionText, ex.InnerException.Message);
+            }
         }
     }
 }

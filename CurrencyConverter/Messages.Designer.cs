@@ -22,7 +22,7 @@ namespace CurrencyConverter {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Messages {
+    public class Messages {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace CurrencyConverter {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CurrencyConverter.Messages", typeof(Messages).Assembly);
@@ -51,7 +51,7 @@ namespace CurrencyConverter {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace CurrencyConverter {
         /// <summary>
         ///   Looks up a localized string similar to The server was unable to complete the conversion..
         /// </summary>
-        internal static string ConvertErrorMessage {
+        public static string ConvertErrorMessage {
             get {
                 return ResourceManager.GetString("ConvertErrorMessage", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace CurrencyConverter {
         /// <summary>
         ///   Looks up a localized string similar to The server was unable to return the history..
         /// </summary>
-        internal static string HistoryErrorMessage {
+        public static string HistoryErrorMessage {
             get {
                 return ResourceManager.GetString("HistoryErrorMessage", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace CurrencyConverter {
         /// <summary>
         ///   Looks up a localized string similar to Unable to download data from the specified source..
         /// </summary>
-        internal static string XmlDownloadError {
+        public static string XmlDownloadError {
             get {
                 return ResourceManager.GetString("XmlDownloadError", resourceCulture);
             }
