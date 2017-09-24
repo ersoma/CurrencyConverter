@@ -28,6 +28,10 @@ namespace CurrencyConverter.Repositories
 
         public async Task<decimal> GetLatestRateForCurrency(string currency)
         {
+            if (currency.ToLower() == "eur")
+            {
+                return 1;
+            }
             await UpdateCurrencies();
             var rate = currencyList.Single(x => x.Name.ToLower() == currency.ToLower()).Rates.OrderByDescending(x => x.Timestamp).First().Rate;
             return rate;
@@ -42,7 +46,7 @@ namespace CurrencyConverter.Repositories
 
         private async Task UpdateCurrencies()
         {
-            var cacheDurationInMinutes = Convert.ToInt32(ConfigurationManager.AppSettings["cacheDurationInMinutes"]);
+            var cacheDurationInMinutes = Convert.ToInt32(ConfigurationManager.AppSettings["CacheDurationInMinutes"]);
             var isCacheExpired = DateTime.Now.Subtract(lastUpdate) > TimeSpan.FromMinutes(cacheDurationInMinutes);
             if (currencyList != null && isCacheExpired == false)
             {

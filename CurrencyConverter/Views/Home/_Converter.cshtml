@@ -10,6 +10,7 @@
         </div>
         <div class="small-9 columns">
             <select id="currency_from">
+                <option value="EUR">EUR</option>
                 @foreach (var currency in ViewBag.CurrencyList)
                 {
                     <option value="@currency">@currency</option>
@@ -24,6 +25,7 @@
         </div>
         <div class="small-9 columns">
             <select id="currency_to">
+                <option value="EUR">EUR</option>
                 @foreach (var currency in ViewBag.CurrencyList)
                 {
                     <option value="@currency">@currency</option>
