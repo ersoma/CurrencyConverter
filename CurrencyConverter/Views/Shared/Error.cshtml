@@ -1,13 +1,21 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Error</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
 </head>
 <body>
-    <hgroup>
-        <h1>Error.</h1>
-        <h2>An error occurred while processing your request.</h2>
-    </hgroup>
+
+    <div class="row collapse">
+        <div class="small-12 columns">
+            <div class="panel">
+                <h1>We are sorry :(</h1>
+                <p>An error occurred while processing your request. Please try again later.</p>
+            </div>
+        </div>
+    </div>
+   
 </body>
 </html>

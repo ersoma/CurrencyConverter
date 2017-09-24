@@ -23,5 +23,10 @@ namespace CurrencyConverter.Controllers
             ViewBag.CurrencyList = await currencyRepository.GetCurrencyList();
             return View();
         }
+
+        public ActionResult Error()
+        {
+            return View("~/Shared/Error");
+        }
     }
 }
